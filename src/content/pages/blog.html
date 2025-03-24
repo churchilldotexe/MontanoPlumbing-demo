@@ -1,0 +1,183 @@
+---
+title: 'Blog | Montano Plumbing & Contracting LTD.'
+description: 'Your Trusted Partner for Renovations and Plumbing'
+preloadImg: '/assets/images/cabinets2.jpg'
+permalink: 'blog/'
+eleventyNavigation:
+    key: Blog
+    order: 300
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/blog.css">
+
+        <meta property="og:url" content="{{ client.domain }}{{ page.url }}"/>
+        <meta property="og:image" content="{{ site.url }}/assets/images/ogmontano.png"/>
+        <meta property="og:image:secure_url" content="{{ site.url }}/assets/images/ogmontano.png"/>
+{% endblock %}
+
+{% block body %}
+   <!-- ============================================ -->
+<!--                   Banner                     -->
+<!-- ============================================ -->
+
+<div id="banner-1106-1112">
+    <div class="cs-container">
+        <span class="cs-int-title">Blog</span>
+        <div class="cs-breadcrumbs">
+            <a href="" class="cs-link">Home</a>
+            <a href="" class="cs-link cs-active">Blog</a>
+        </div>
+    </div>
+    <!--Background Image-->
+    <picture class="cs-background">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="/assets/images/banner11.jpg">
+        <!--Tablet and above Image-->
+        <source media="(min-width: 601px)" srcset="/assets/images/banner11.jpg">
+        <img decoding="async" src="/assets/images/banner11.jpg" alt="mechanic" width="1280" height="568" aria-hidden="true">
+    </picture>
+</div>
+
+<!-- ============================================ -->
+<!--                    Blog                      -->
+<!-- ============================================ -->
+
+<!-- <section id="blog-1654">
+    <div class="cs-container">
+        <div class="cs-content">
+            <picture class="cs-picture"> -->
+                <!--Mobile Image-->
+                <!-- <source media="(max-width: 600px)" srcset="/assets/images/mpclogo1.png"> -->
+                <!--Tablet and above Image-->
+                <!-- <source media="(min-width: 601px)" srcset="/assets/images/mpclogo1.png">
+                <img loading="lazy" decoding="async" src="/assets/images/mpclogo1.png" alt="busines meeting" width="413" height="652" aria-hidden="true">
+            </picture>
+            <div class="cs-text-wrapper">
+                <span class="cs-topper">Our Blog</span>
+                <h2 class="cs-title">Latest News</h2>
+            </div>
+        </div>
+        <div class="cs-posts">
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <picture class="cs-image" aria-hidden="true">
+                        <source media="(max-width: 600px)" srcset="/assets/images/plumbingserviceshero.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/plumbingserviceshero.jpg">
+                        <img loading="lazy" decoding="async" src="/assets/images/plumbingserviceshero.jpg" alt="windmill" width="413" height="320">
+                    </picture>
+                    <div class="cs-flex">
+                        <span class="cs-date">29 Oct, 2023</span>
+                        <h3 class="cs-h3">Essential Summer Plumbing Maintenance Tips for Homeowners</h3>
+                        <p class="cs-item-text">
+                            Discover the top renovation projects that can significantly increase your home’s value this summer. From upgrading your kitchen and bathrooms to enhancing curb appeal with landscaping, explore the best ways to make your home more appealing to potential buyers. Learn which improvements offer the greatest return on investment and get your property market-ready with these smart upgrades.     </p>
+                        <a href="" class="cs-link">
+                      
+                            <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-right-arrow.svg" alt="icon" width="20" height="20" aria-hidden="true">
+                        </a>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <picture class="cs-image" aria-hidden="true">
+                        <source media="(max-width: 600px)" srcset="/assets/images/blogrenov.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/blogrenov.jpg">
+                        <img loading="lazy" decoding="async" src="/assets/images/blogrenov.jpg" alt="fire hydrant" width="413" height="320">
+                    </picture>
+                    <div class="cs-flex">
+                        <span class="cs-date">8 March, 2024</span>
+                        <h3 class="cs-h3">Top Renovation Projects to Boost Your Home’s Value This Summer</h3>
+                        <p class="cs-item-text">
+                           Explore the most impactful renovation projects to elevate your home’s value this summer. Whether you're thinking of modernizing your kitchen, refreshing your bathrooms, or enhancing outdoor spaces, these upgrades will not only enhance your living experience but also maximize your property's market appeal. Discover which projects offer the best returns and transform your home into a valuable investment.   </p>
+                        <a href="" class="cs-link">
+                        
+                            <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-right-arrow.svg" alt="icon" width="20" height="20" aria-hidden="true">
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+                                    -->
+
+
+
+
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ============================================ -->
+    <!--              Main Blog Content               -->
+    <!-- ============================================ -->
+
+    <div class="blog-container main-content-wrapper">
+        
+        <div class="main-content">
+            <!-- ============================================ -->
+            <!--                 Blog Articles                -->
+            <!-- ============================================ -->
+
+            {% if collections.post | length == 0 %}
+                <h1>No Recent Posts</h1>
+            {% else %}
+                {%- for post in collections.post | reverse -%}
+                    <article class="recent-articles">
+                        <!--Main Article Image-->
+                        <picture class="blog-mainImage">
+                            <img
+                            src="{{ post.data.image }}"
+                            alt="{{ post.data.imageAlt }}"
+                            width="795"
+                            height="400"
+                            decoding="async"/>
+                        </picture>
+                        <!--Article Info-->
+                        <div class="article-group">
+                            <div class="blog-authorGroup">
+                                <!--Author Image-->
+                                <picture class="blog-author-img">
+                                    <img
+                                    src="/assets/svgs/profile.svg"
+                                    alt="house"
+                                    width="32"
+                                    height="32"
+                                    decoding="async"/>
+                                </picture>
+                                <span class="blog-author">{{ post.data.author }}</span>
+                                <span aria-hidden="true" class="blog-dot"></span>
+                                <!--Blog Date-->
+                                <span class="blog-date">{{ post.date | postDate }}</span>
+                            </div>
+                            <h2 class="blog-h1">
+                                {{ post.data.title }}
+                            </h2>
+                            <p class="blog-desc">
+                                {{ post.data.description }}
+                            </p>
+                            <a href="{{ post.url }}" class="blog-link">Continue Reading</a>
+                        </div>
+                    </article>
+                {%- endfor -%}
+            {% endif %}
+        </div>
+
+        {% include 'components/featured-post.html' %}
+    </div>
+{% endblock %}
